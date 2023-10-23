@@ -57,4 +57,18 @@
     </form>
     <app-vehicle-img [type]="mainTypeValue"></app-vehicle-img>
   </div>
+
+
+
+  <ng-container *ngIf="(someDummyUsers$ | async) as someUsers">
+    <section class="bg-white mt-20 p-8">
+      <hr />
+      <h3>Here is some dummy data to display, that is provided from store, loaded there with action and effect participation</h3>
+      <ng-container *ngFor="let user of someUsers.data">
+        <p>
+          {{ user.id }} - {{ user.name }}
+        </p>
+      </ng-container>
+    </section>
+  </ng-container>
   
